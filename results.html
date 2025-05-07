@@ -1,0 +1,25 @@
+<!-- templates/results.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Results</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Quiz Results</h2>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Score: {{ score }}/{{ total }}</h4>
+                <h5>Questions Review:</h5>
+                {% for question in questions %}
+                    <div class="mb-3">
+                        <p><strong>Question {{ loop.index }}:</strong> {{ question.question }}</p>
+                        <p>Correct answer: {{ question.correct_answer }}</p>
+                    </div>
+                {% endfor %}
+                <a href="{{ url_for('welcome') }}" class="btn btn-primary">Return to Welcome</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

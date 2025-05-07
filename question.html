@@ -1,0 +1,29 @@
+<!-- templates/question.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h3>Question {{ question_num }} of {{ total_questions }}</h3>
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">{{ question }}</h5>
+                <form method="POST" action="{{ url_for('submit_answer') }}">
+                    {% for option in options %}
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="answer"
+                                   value="{{ option }}" id="option{{ loop.index }}" required>
+                            <label class="form-check-label" for="option{{ loop.index }}">
+                                {{ option }}
+                            </label>
+                        </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary mt-3">Next</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

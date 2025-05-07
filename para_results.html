@@ -1,0 +1,29 @@
+<!-- templates/para_results.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Paragraph Quiz Results</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Quiz Results</h2>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Score: {{ score }}/{{ total }}</h4>
+                <div class="mb-4 p-3 bg-light">
+                    <h5>Original Paragraph:</h5>
+                    <p>{{ paragraph }}</p>
+                </div>
+                <h5>Questions Review:</h5>
+                {% for question in questions %}
+                    <div class="mb-3">
+                        <p><strong>Question {{ loop.index }}:</strong> {{ question.Question }}</p>
+                        <p>Correct answer: {{ question.Answer }}</p>
+                    </div>
+                {% endfor %}
+                <a href="{{ url_for('welcome') }}" class="btn btn-primary">Return to Welcome</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

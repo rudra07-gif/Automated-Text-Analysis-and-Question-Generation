@@ -1,0 +1,19 @@
+<!-- templates/welcome.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Welcome {{ username }}</h1>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <a href="{{ url_for('topic_quiz') }}" class="btn btn-success btn-lg w-100 mb-3">Topic Based Quiz</a>
+                <a href="{{ url_for('paragraph_quiz') }}" class="btn btn-primary btn-lg w-100 mb-3">Paragraph Based Quiz</a>
+                <a href="{{ url_for('logout') }}" class="btn btn-danger btn-lg w-100">Logout</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!-- templates/paragraph_quiz_setup.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Paragraph Quiz Setup</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Paragraph Quiz Setup</h2>
+        <form method="POST">
+            <div class="mb-3">
+                <label class="form-label">Enter Paragraph</label>
+                <textarea name="paragraph" class="form-control" rows="5" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Number of Questions</label>
+                <input type="number" name="num_questions" class="form-control" value="5" min="1" max="20" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Generate Quiz</button>
+        </form>
+    </div>
+</body>
+</html>

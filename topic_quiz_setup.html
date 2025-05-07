@@ -1,0 +1,32 @@
+<!-- templates/topic_quiz_setup.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Topic Quiz Setup</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Topic Quiz Setup</h2>
+        <form method="POST">
+            <div class="mb-3">
+                <label class="form-label">Select Category</label>
+                <select name="category" class="form-select" required>
+                    {% for category in categories %}
+                        <option value="{{ category.id }}">{{ category.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Number of Questions</label>
+                <select name="num_questions" class="form-select" required>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Start Quiz</button>
+        </form>
+    </div>
+</body>
+</html>
